@@ -1,0 +1,63 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/Jacob/Documents/8-bit-ALU
+vALU
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1779489496
+!i10b 1
+!s100 bzK:YM<QOO@OgR1M1Bm2>0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I]W]7A@OX28BNnkJ^<MA4m2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1779489496
+8/tmp/vCIftWW/128/ALU.sv
+F/tmp/vCIftWW/128/ALU.sv
+!i122 53
+L0 1 46
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1779489496.000000
+!s107 /tmp/vCIftWW/128/ALU.sv|
+!s90 -quiet|-lint|/tmp/vCIftWW/128/ALU.sv|
+!i113 1
+Z5 o-quiet -lint
+Z6 tCvgOpt 0
+n@a@l@u
+vRegister
+R1
+!s110 1779488388
+!i10b 1
+!s100 Ug:9^a_bTb;WGYQ:IAb^P3
+R2
+Ih3FmiUeb1g]XTY]5T`FNZ0
+R3
+S1
+R0
+w1779488388
+8/tmp/vYvJEOz/2/Register.sv
+F/tmp/vYvJEOz/2/Register.sv
+!i122 14
+L0 1 17
+R4
+r1
+!s85 0
+31
+!s108 1779488388.000000
+!s107 /tmp/vYvJEOz/2/Register.sv|
+!s90 -quiet|-lint|/tmp/vYvJEOz/2/Register.sv|
+!i113 1
+R5
+R6
+n@register
