@@ -48,17 +48,22 @@ always_ff @(posedge clock) begin
     nextState[0] <= (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
 
     nextState[1] <= (state[0] | state[1] | ~nextStateButton) & (~state[0] | ~state[1] | nextStateButton);
-    
-    if(~state[0] & ~state[1]) begin
-        opcode <= in;
+    if (!reset) begin
+        opcode <= '0;
+        a      <= '0;
+        b      <= '0;
+    end else begin
+        if(~state[0] & ~state[1]) begin
+            opcode <= in;
+        end
+        // oh noez! these conditions are the same :o
+        if(~state[0] & state[1]) begin
+            a <= in;
+        end
+        if(~state[0] & state[1]) begin
+            b <= in;
+        end
     end
-    if(~state[0] & state[1]) begin
-        a <= in;
-    end
-    if(~state[0] & state[1]) begin
-        b <= in;
-    end
-
 end
 
 
