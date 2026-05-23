@@ -53,10 +53,10 @@ always_ff @(posedge clock) begin
         opcode <= in;
     end
     if(~state[0] & state[1]) begin
-        a = in;
+        a <= in;
     end
     if(~state[0] & state[1]) begin
-        b = in;
+        b <= in;
     end
 
 end
