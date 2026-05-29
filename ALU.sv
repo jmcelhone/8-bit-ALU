@@ -89,7 +89,7 @@ Add sub(
     .carry(subCarry)
     );    
 
-always_ff @(posedge clock) begin
+always_ff @(posedge clock negedge reset) begin
     nextState[0] <= (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
 
     nextState[1] <= (state[0] | state[1] | ~nextStateButton) & (~state[0] | ~state[1] | nextStateButton);
