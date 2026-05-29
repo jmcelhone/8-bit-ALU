@@ -141,6 +141,9 @@ always_ff @(posedge clock or negedge reset) begin
             b <= in;
         end
     end
+end
+
+always_comb begin
     if(op_add) begin
         aluOut <= adderOut;
         carryOut <= adderCarry;
