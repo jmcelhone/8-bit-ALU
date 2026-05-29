@@ -1,10 +1,25 @@
 module Output (
+    input logic         clock,
+    input logic         reset,
+    input logic  [7:0]  in,
+    input logic         nextStateButton,
     input  logic        enable,
-    input  logic [7:0]  result,
-    input  logic        overflow,
     output logic [6:0]  seg_high,
     output logic [6:0]  seg_low,
     output logic        overflow_led
+);
+
+    logic [7:0]  result,
+    logic        overflow,
+
+
+ALU alu(
+    .clock          (clock),
+    .reset          (reset),
+    .in             (in),
+    .nextStateButton(nextStateButton),
+    .aluOut         (result),
+    .carryOut       (overflow)
 );
 
     SevenSegmentDecode decode_high (
