@@ -33,6 +33,8 @@ logic adderCarry;
 logic [7:0] subOut;
 logic subCarry;
 
+logic [15:0] multOut;
+
 logic [7:0] andOut;
 
 logic [7:0] orOut;
@@ -119,6 +121,13 @@ XorInstruct xorInstruct(
     .out(xorOut);
     );
 
+Multiply(
+    .clock(clock),
+    .a(a),
+    .b(b),
+    .multOut(multOut)
+    );
+
 always_ff @(posedge clock negedge reset) begin
     nextState[0] <= (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
 
@@ -168,8 +177,8 @@ always_ff @(posedge clock negedge reset) begin
     end
     //Mult not implemented yet
     else if(op_mult) begin
-        aluOut <= 1'b0;
-        carryOut <= 1'b0;
+        aluOut <= multOut[7:0];
+        carryOut <= multOut[8];
     end
 end
 
