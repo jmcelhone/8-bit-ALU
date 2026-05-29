@@ -33,6 +33,12 @@ logic adderCarry;
 logic [7:0] subOut;
 logic subCarry;
 
+logic [7:0] andOut;
+
+logic [7:0] orOut;
+
+logic [7:0] xorOut;
+
 Register #(.WIDTH(2)) state(
     .clock(clock),
     .clear_n(reset),
@@ -89,6 +95,30 @@ Add sub(
     .carry(subCarry)
     );    
 
+AndInstruct andInstruct(
+    .A(a),
+    .B(b),
+    .out(andOut)
+    );
+    
+AndInstruct andInstruct(
+    .A(a),
+    .B(b),
+    .out(andOut)
+    );
+
+OrInstruct orInstruct(
+    .A(a),
+    .B(b),
+    .out(orOut)
+    );
+
+XorInstruct xorInstruct(
+    .A(a),
+    .B(b),
+    .out(xorOut);
+    );
+
 always_ff @(posedge clock negedge reset) begin
     nextState[0] <= (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
 
@@ -117,15 +147,15 @@ always_ff @(posedge clock negedge reset) begin
         carryOut <= subCarry;
     end
     else if(op_and) begin
-        aluOut <= a & b;
+        aluOut <= andOut;
         carryOut <= 1'b0;
     end
     else if(op_or) begin
-        aluOut <= a | b;
+        aluOut <= orOut;
         carryOut <= 1'b0;
     end
     else if(op_xor) begin
-        aluOut <= a ^ b;
+        aluOut <= xorOut;
         carryOut <= 1'b0;
     end
     else if(op_outA) begin
