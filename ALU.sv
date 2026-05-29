@@ -141,6 +141,11 @@ always_ff @(posedge clock or negedge reset) begin
             b <= in;
         end
     end
+    //Mult not implemented yet
+    if(op_mult) begin
+        aluOut <= multOut[7:0];
+        carryOut <= multOut[8];
+    end
 end
 
 always_comb begin
@@ -171,11 +176,6 @@ always_comb begin
     else if(op_outB) begin
         aluOut <= b;
         carryOut <= 1'b0;
-    end
-    //Mult not implemented yet
-    else if(op_mult) begin
-        aluOut <= multOut[7:0];
-        carryOut <= multOut[8];
     end
 end
 
