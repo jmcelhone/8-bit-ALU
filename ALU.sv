@@ -122,24 +122,24 @@ Multiply(
     .multOut(multOut)
     );
 
-always_ff @(posedge clock or negedge reset) begin
+always @(negedge reset and posedge ~clock) begin
+    a <= '0;
+    b <= '0;
+    opcode <= '0;
+end
+
+always_ff @(posedge clock) begin
     nextState[0] <= (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
 
     nextState[1] <= (state[0] | state[1] | ~nextStateButton) & (~state[0] | ~state[1] | nextStateButton);
-    if (!reset) begin
-        opcode <= '0;
-        a      <= '0;
-        b      <= '0;
-    end else begin
-        if(~(state[0]) & ~(state[1])) begin
-            opcode <= in;
-        end
-        if(~state[0] & state[1]) begin
-            a <= in;
-        end
-        if(state[0] & state[1]) begin
-            b <= in;
-        end
+    if(~(state[0]) & ~(state[1])) begin
+        opcode <= in;
+    end
+    if(~state[0] & state[1]) begin
+        a <= in;
+    end
+    if(state[0] & state[1]) begin
+        b <= in;
     end
     if(op_add) begin
         aluOut <= adderOut;

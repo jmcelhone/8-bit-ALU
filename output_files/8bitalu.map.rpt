@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 8bitalu
-Fri May 29 16:05:31 2026
+Fri May 29 16:27:39 2026
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri May 29 16:05:31 2026              ;
+; Analysis & Synthesis Status        ; Failed - Fri May 29 16:27:39 2026              ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; 8bitalu                                        ;
 ; Top-level Entity Name              ; Output                                         ;
@@ -164,13 +164,12 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Fri May 29 16:05:27 2026
+    Info: Processing started: Fri May 29 16:27:35 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8bitalu -c 8bitalu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
-Error (10170): Verilog HDL syntax error at Output.sv(13) near text: "logic";  expecting an identifier ("logic" is a reserved keyword ). Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 13
-Error (10112): Ignored design unit "Output" at Output.sv(1) due to previous errors File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file Output.sv
+Info (12021): Found 1 design units, including 1 entities, in source file Output.sv
+    Info (12023): Found entity 1: Output File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file XOR.sv
     Info (12023): Found entity 1: XorInstruct File: /home/jeremy/ECE204/8-bit-ALU/XOR.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file AND.sv
@@ -189,9 +188,33 @@ Info (12021): Found 1 design units, including 1 entities, in source file OR.sv
     Info (12023): Found entity 1: OrInstruct File: /home/jeremy/ECE204/8-bit-ALU/OR.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Register.sv
     Info (12023): Found entity 1: Register File: /home/jeremy/ECE204/8-bit-ALU/Register.sv Line: 1
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 353 megabytes
-    Error: Processing ended: Fri May 29 16:05:31 2026
+Warning (10236): Verilog HDL Implicit Net warning at ALU.sv(81): created implicit net for "op_mult" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 81
+Critical Warning (10846): Verilog HDL Instantiation warning at ALU.sv(123): instance has no name File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 123
+Info (12127): Elaborating entity "Output" for the top level hierarchy
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 23
+Error (10028): Can't resolve multiple constant drivers for net "opcode[7]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10029): Constant driver at ALU.sv(125) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 125
+Error (10028): Can't resolve multiple constant drivers for net "opcode[6]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "opcode[5]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "opcode[4]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "opcode[3]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "opcode[2]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "opcode[1]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "opcode[0]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "a[7]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "a[6]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "a[5]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "a[4]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "a[3]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "a[2]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "a[1]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "a[0]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "b[7]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (10028): Can't resolve multiple constant drivers for net "b[6]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
+Error (12152): Can't elaborate user hierarchy "ALU:alu" File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 23
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 3 warnings
+    Error: Peak virtual memory: 360 megabytes
+    Error: Processing ended: Fri May 29 16:27:39 2026
     Error: Elapsed time: 00:00:04
     Error: Total CPU time (on all processors): 00:00:13
 
