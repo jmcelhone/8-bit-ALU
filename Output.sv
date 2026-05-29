@@ -9,8 +9,8 @@ module Output (
     output logic        overflow_led
 );
 
-    logic [7:0]  result,
-    logic        overflow,
+    logic [7:0]  result;
+    logic        overflow;
 
 
 ALU alu(
