@@ -141,41 +141,38 @@ always_ff @(posedge clock or negedge reset) begin
             b <= in;
         end
     end
-    //Mult not implemented yet
-    if(op_mult) begin
-        aluOut <= multOut[7:0];
-        carryOut <= multOut[8];
-    end
-end
-
-always_comb begin
     if(op_add) begin
-        aluOut = adderOut;
-        carryOut = adderCarry;
+        aluOut <= adderOut;
+        carryOut <= adderCarry;
     end
     else if(op_sub) begin
-        aluOut = subOut;
-        carryOut = subCarry;
+        aluOut <= subOut;
+        carryOut <= subCarry;
     end
     else if(op_and) begin
-        aluOut = andOut;
-        carryOut = 1'b0;
+        aluOut <= andOut;
+        carryOut <= 1'b0;
     end
     else if(op_or) begin
-        aluOut = orOut;
-        carryOut = 1'b0;
+        aluOut <= orOut;
+        carryOut <= 1'b0;
     end
     else if(op_xor) begin
-        aluOut = xorOut;
-        carryOut = 1'b0;
+        aluOut <= xorOut;
+        carryOut <= 1'b0;
     end
     else if(op_outA) begin
-        aluOut = a;
-        carryOut = 1'b0;
+        aluOut <= a;
+        carryOut <= 1'b0;
     end
     else if(op_outB) begin
-        aluOut = b;
-        carryOut = 1'b0;
+        aluOut <= b;
+        carryOut <= 1'b0;
+    end
+    //Mult not implemented yet
+    else if(op_mult) begin
+        aluOut <= multOut[7:0];
+        carryOut <= multOut[8];
     end
 end
 
