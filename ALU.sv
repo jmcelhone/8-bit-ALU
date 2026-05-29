@@ -41,7 +41,7 @@ logic [7:0] orOut;
 
 logic [7:0] xorOut;
 
-Register #(.WIDTH(2)) state(
+Register #(.WIDTH(2)) statereg(
     .clock(clock),
     .clear_n(reset),
     .d(nextState),
@@ -103,12 +103,6 @@ AndInstruct andInstruct(
     .out(andOut)
     );
     
-AndInstruct andInstruct(
-    .A(a),
-    .B(b),
-    .out(andOut)
-    );
-
 OrInstruct orInstruct(
     .A(a),
     .B(b),
@@ -118,7 +112,7 @@ OrInstruct orInstruct(
 XorInstruct xorInstruct(
     .A(a),
     .B(b),
-    .out(xorOut);
+    .out(xorOut)
     );
 
 Multiply(
@@ -128,7 +122,7 @@ Multiply(
     .multOut(multOut)
     );
 
-always_ff @(posedge clock negedge reset) begin
+always_ff @(posedge clock or negedge reset) begin
     nextState[0] <= (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
 
     nextState[1] <= (state[0] | state[1] | ~nextStateButton) & (~state[0] | ~state[1] | nextStateButton);
@@ -137,7 +131,7 @@ always_ff @(posedge clock negedge reset) begin
         a      <= '0;
         b      <= '0;
     end else begin
-        if(~state[0] & ~state[1]) begin
+        if(~(state[0]) & ~(state[1])) begin
             opcode <= in;
         end
         if(~state[0] & state[1]) begin
