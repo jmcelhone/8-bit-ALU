@@ -122,16 +122,22 @@ Multiply(
     .multOut(multOut)
     );
 
-always @(negedge reset and posedge ~clock) begin
-    a <= '0;
-    b <= '0;
-    opcode <= '0;
-end
 
-always_ff @(posedge clock) begin
+always_comb
     nextState[0] <= (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
 
     nextState[1] <= (state[0] | state[1] | ~nextStateButton) & (~state[0] | ~state[1] | nextStateButton);
+end
+
+always_ff @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        a <= '0;
+        b <= '0;
+        opcode <= '0;
+        aluOut <= '0;
+        carryOut <= '0;
+        state <= '0;
+    end
     if(~(state[0]) & ~(state[1])) begin
         opcode <= in;
     end
