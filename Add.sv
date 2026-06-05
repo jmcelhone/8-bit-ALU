@@ -17,9 +17,9 @@ sum[0] = a[0]^b[0];
 c[0] = a[0]&(b[0]|sign) | ~b[0]&sign;
 //should probably make a truth table to back up the above line of code
 
-  for(int i=1;i<8;i++)begin
-sum[i] = a[i]^b[i]^c[i]^sign;
-c[i] = a[i]&((b[i]^sign)|c[i]) | (b[i]^sign)&c[i];
+  for(int i=0;i<7;i++)begin
+    sum[i+1] = a[i+1]^b[i+1]^c[i]^sign;
+    c[i+1] = a[i+1]&((b[i+1]^sign)|c[i]) | (b[i+1]^sign)&c[i];
 end
 
 carry = c[7];
