@@ -4,7 +4,8 @@ module ALU(
     input logic [7:0] in,
     input logic nextStateButton,
     output logic [7:0] aluOut,
-    output logic carryOut
+    output logic carryOut,
+    output logic [3:0] currentState
 );
 
 logic [7:0] opcode;
@@ -142,12 +143,15 @@ always_ff @(posedge clock or negedge reset) begin
     end else begin
         if(~(state[0]) & ~(state[1])) begin
             opcode <= in;
+            currentState <= '0;
         end
         if(~state[0] & state[1]) begin
             a <= in;
+            currentState <= 1'h1;
         end
         if(state[0] & state[1]) begin
             b <= in;
+            currentState <= 1'h2;
         end
         if(op_add) begin
             aluOut <= adderOut;
