@@ -11,7 +11,7 @@ module OpDecoder (
 );
 
     always_comb begin
-        {op_add, op_sub, op_and, op_or, op_xor, op_outA, op_outB} = 7'b0;
+        {op_add, op_sub, op_and, op_or, op_xor, op_outA, op_outB, op_mult} = 8'b0;
         case (opcode)
             3'b000: op_add  = 1'b1;
             3'b001: op_sub  = 1'b1;
