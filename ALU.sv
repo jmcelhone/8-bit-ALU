@@ -78,7 +78,7 @@ OpDecoder decoder(
     .op_xor(op_xor),
     .op_outA(op_outA),
     .op_outB(op_outB),
-    .op_mult(op_mult) 
+    .op_mult(op_outmult) 
     );
 
 Add adder(
@@ -123,10 +123,12 @@ Multiply(
     );
 
 
-always_comb
-    nextState[0] <= (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
+    always_comb begin
+    nextState[0] = (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
 
-    nextState[1] <= (state[0] | state[1] | ~nextStateButton) & (~state[0] | ~state[1] | nextStateButton);
+    nextState[1] = (state[0] | state[1] | ~nextStateButton) & (~state[0] | ~state[1] | nextStateButton);
+    nextState[0] = nextState[0] & reset;
+    nextState[1] = nextState[1] & reset;
 end
 
 always_ff @(posedge clock or negedge reset) begin
@@ -136,49 +138,50 @@ always_ff @(posedge clock or negedge reset) begin
         opcode <= '0;
         aluOut <= '0;
         carryOut <= '0;
-        state <= '0;
-    end
-    if(~(state[0]) & ~(state[1])) begin
-        opcode <= in;
-    end
-    if(~state[0] & state[1]) begin
-        a <= in;
-    end
-    if(state[0] & state[1]) begin
-        b <= in;
-    end
-    if(op_add) begin
-        aluOut <= adderOut;
-        carryOut <= adderCarry;
-    end
-    else if(op_sub) begin
-        aluOut <= subOut;
-        carryOut <= subCarry;
-    end
-    else if(op_and) begin
-        aluOut <= andOut;
-        carryOut <= 1'b0;
-    end
-    else if(op_or) begin
-        aluOut <= orOut;
-        carryOut <= 1'b0;
-    end
-    else if(op_xor) begin
-        aluOut <= xorOut;
-        carryOut <= 1'b0;
-    end
-    else if(op_outA) begin
-        aluOut <= a;
-        carryOut <= 1'b0;
-    end
-    else if(op_outB) begin
-        aluOut <= b;
-        carryOut <= 1'b0;
-    end
-    //Mult not implemented yet
-    else if(op_mult) begin
-        aluOut <= multOut[7:0];
-        carryOut <= multOut[8];
+        //state <= '0;
+    end else begin
+        if(~(state[0]) & ~(state[1])) begin
+            opcode <= in;
+        end
+        if(~state[0] & state[1]) begin
+            a <= in;
+        end
+        if(state[0] & state[1]) begin
+            b <= in;
+        end
+        if(op_add) begin
+            aluOut <= adderOut;
+            carryOut <= adderCarry;
+        end
+        else if(op_sub) begin
+            aluOut <= subOut;
+            carryOut <= subCarry;
+        end
+        else if(op_and) begin
+            aluOut <= andOut;
+            carryOut <= 1'b0;
+        end
+        else if(op_or) begin
+            aluOut <= orOut;
+            carryOut <= 1'b0;
+        end
+        else if(op_xor) begin
+            aluOut <= xorOut;
+            carryOut <= 1'b0;
+        end
+        else if(op_outA) begin
+            aluOut <= a;
+            carryOut <= 1'b0;
+        end
+        else if(op_outB) begin
+            aluOut <= b;
+            carryOut <= 1'b0;
+        end
+        //Mult not implemented yet
+        else if(op_outmult) begin
+            aluOut <= multOut[7:0];
+            carryOut <= multOut[8];
+        end
     end
 end
 

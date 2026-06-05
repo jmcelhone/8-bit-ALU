@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 8bitalu
-Fri May 29 16:27:39 2026
+Fri Jun  5 14:49:46 2026
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -10,7 +10,24 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: ALU:alu|Register:statereg
+ 11. Parameter Settings for User Entity Instance: ALU:alu|Register:opcodereg
+ 12. Parameter Settings for User Entity Instance: ALU:alu|Register:areg
+ 13. Parameter Settings for User Entity Instance: ALU:alu|Register:breg
+ 14. Port Connectivity Checks: "ALU:alu|Multiply:comb_3"
+ 15. Port Connectivity Checks: "ALU:alu|Add:sub"
+ 16. Port Connectivity Checks: "ALU:alu|Add:adder"
+ 17. Port Connectivity Checks: "ALU:alu|Register:breg"
+ 18. Port Connectivity Checks: "ALU:alu|Register:areg"
+ 19. Port Connectivity Checks: "ALU:alu|Register:opcodereg"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +54,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri May 29 16:27:39 2026              ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun  5 14:49:46 2026          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; 8bitalu                                        ;
 ; Top-level Entity Name              ; Output                                         ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 192                                            ;
+;     Total combinational functions  ; 173                                            ;
+;     Dedicated logic registers      ; 39                                             ;
+; Total registers                    ; 39                                             ;
+; Total pins                         ; 27                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -151,11 +168,233 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
+; Output.sv                        ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/Output.sv             ;         ;
+; XOR.sv                           ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/XOR.sv                ;         ;
+; AND.sv                           ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/AND.sv                ;         ;
+; Add.sv                           ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/Add.sv                ;         ;
+; ALU.sv                           ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv                ;         ;
+; OpDecoder.sv                     ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/OpDecoder.sv          ;         ;
+; SevenSegmentDecode.sv            ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/SevenSegmentDecode.sv ;         ;
+; Multiply.sv                      ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/Multiply.sv           ;         ;
+; OR.sv                            ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/OR.sv                 ;         ;
+; Register.sv                      ; yes             ; User SystemVerilog HDL File  ; /home/jeremy/ECE204/new/8-bit-ALU/Register.sv           ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 192         ;
+;                                             ;             ;
+; Total combinational functions               ; 173         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 70          ;
+;     -- 3 input functions                    ; 66          ;
+;     -- <=2 input functions                  ; 37          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 146         ;
+;     -- arithmetic mode                      ; 27          ;
+;                                             ;             ;
+; Total registers                             ; 39          ;
+;     -- Dedicated logic registers            ; 39          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 27          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 39          ;
+; Total fan-out                               ; 728         ;
+; Average fan-out                             ; 2.74        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                    ;
++-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                     ; Entity Name        ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+--------------------+--------------+
+; |Output                             ; 173 (1)             ; 39 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 27   ; 0            ; 0          ; |Output                                 ; Output             ; work         ;
+;    |ALU:alu|                        ; 144 (52)            ; 39 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Output|ALU:alu                         ; ALU                ; work         ;
+;       |Add:adder|                   ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Output|ALU:alu|Add:adder               ; Add                ; work         ;
+;       |Add:sub|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Output|ALU:alu|Add:sub                 ; Add                ; work         ;
+;       |AndInstruct:andInstruct|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Output|ALU:alu|AndInstruct:andInstruct ; AndInstruct        ; work         ;
+;       |Multiply:comb_3|             ; 72 (72)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Output|ALU:alu|Multiply:comb_3         ; Multiply           ; work         ;
+;       |Register:statereg|           ; 0 (0)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Output|ALU:alu|Register:statereg       ; Register           ; work         ;
+;    |SevenSegmentDecode:decode_high| ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Output|SevenSegmentDecode:decode_high  ; SevenSegmentDecode ; work         ;
+;    |SevenSegmentDecode:decode_low|  ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Output|SevenSegmentDecode:decode_low   ; SevenSegmentDecode ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 39    ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 4     ;
+; Number of registers using Asynchronous Clear ; 28    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 19    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; Yes        ; |Output|ALU:alu|aluOut[6]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:alu|Register:statereg ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:alu|Register:opcodereg ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:alu|Register:areg ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:alu|Register:breg ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:alu|Multiply:comb_3"                                                                      ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; multOut[15..9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "ALU:alu|Add:sub" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; sign ; Input ; Info     ; Stuck at VCC      ;
++------+-------+----------+-------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "ALU:alu|Add:adder" ;
++------+-------+----------+---------------------+
+; Port ; Type  ; Severity ; Details             ;
++------+-------+----------+---------------------+
+; sign ; Input ; Info     ; Stuck at GND        ;
++------+-------+----------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:alu|Register:breg"                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:alu|Register:areg"                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:alu|Register:opcodereg"                                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 27                          ;
+; cycloneiii_ff         ; 39                          ;
+;     CLR               ; 9                           ;
+;     ENA CLR           ; 19                          ;
+;     SCLR              ; 2                           ;
+;     SLD               ; 4                           ;
+;     plain             ; 5                           ;
+; cycloneiii_lcell_comb ; 175                         ;
+;     arith             ; 27                          ;
+;         3 data inputs ; 27                          ;
+;     normal            ; 148                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 70                          ;
+;                       ;                             ;
+; Max LUT depth         ; 14.70                       ;
+; Average LUT depth     ; 8.32                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -164,58 +403,53 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Fri May 29 16:27:35 2026
+    Info: Processing started: Fri Jun  5 14:49:41 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8bitalu -c 8bitalu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file Output.sv
-    Info (12023): Found entity 1: Output File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 1
+    Info (12023): Found entity 1: Output File: /home/jeremy/ECE204/new/8-bit-ALU/Output.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file XOR.sv
-    Info (12023): Found entity 1: XorInstruct File: /home/jeremy/ECE204/8-bit-ALU/XOR.sv Line: 1
+    Info (12023): Found entity 1: XorInstruct File: /home/jeremy/ECE204/new/8-bit-ALU/XOR.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file AND.sv
-    Info (12023): Found entity 1: AndInstruct File: /home/jeremy/ECE204/8-bit-ALU/AND.sv Line: 1
+    Info (12023): Found entity 1: AndInstruct File: /home/jeremy/ECE204/new/8-bit-ALU/AND.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Add.sv
-    Info (12023): Found entity 1: Add File: /home/jeremy/ECE204/8-bit-ALU/Add.sv Line: 1
+    Info (12023): Found entity 1: Add File: /home/jeremy/ECE204/new/8-bit-ALU/Add.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ALU.sv
-    Info (12023): Found entity 1: ALU File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 1
+    Info (12023): Found entity 1: ALU File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file OpDecoder.sv
-    Info (12023): Found entity 1: OpDecoder File: /home/jeremy/ECE204/8-bit-ALU/OpDecoder.sv Line: 1
+    Info (12023): Found entity 1: OpDecoder File: /home/jeremy/ECE204/new/8-bit-ALU/OpDecoder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file SevenSegmentDecode.sv
-    Info (12023): Found entity 1: SevenSegmentDecode File: /home/jeremy/ECE204/8-bit-ALU/SevenSegmentDecode.sv Line: 27
+    Info (12023): Found entity 1: SevenSegmentDecode File: /home/jeremy/ECE204/new/8-bit-ALU/SevenSegmentDecode.sv Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file Multiply.sv
-    Info (12023): Found entity 1: Multiply File: /home/jeremy/ECE204/8-bit-ALU/Multiply.sv Line: 1
+    Info (12023): Found entity 1: Multiply File: /home/jeremy/ECE204/new/8-bit-ALU/Multiply.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file OR.sv
-    Info (12023): Found entity 1: OrInstruct File: /home/jeremy/ECE204/8-bit-ALU/OR.sv Line: 1
+    Info (12023): Found entity 1: OrInstruct File: /home/jeremy/ECE204/new/8-bit-ALU/OR.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Register.sv
-    Info (12023): Found entity 1: Register File: /home/jeremy/ECE204/8-bit-ALU/Register.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at ALU.sv(81): created implicit net for "op_mult" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 81
-Critical Warning (10846): Verilog HDL Instantiation warning at ALU.sv(123): instance has no name File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 123
+    Info (12023): Found entity 1: Register File: /home/jeremy/ECE204/new/8-bit-ALU/Register.sv Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at ALU.sv(123): instance has no name File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 123
 Info (12127): Elaborating entity "Output" for the top level hierarchy
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 23
-Error (10028): Can't resolve multiple constant drivers for net "opcode[7]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10029): Constant driver at ALU.sv(125) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 125
-Error (10028): Can't resolve multiple constant drivers for net "opcode[6]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "opcode[5]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "opcode[4]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "opcode[3]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "opcode[2]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "opcode[1]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "opcode[0]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "a[7]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "a[6]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "a[5]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "a[4]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "a[3]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "a[2]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "a[1]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "a[0]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "b[7]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (10028): Can't resolve multiple constant drivers for net "b[6]" at ALU.sv(131) File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 131
-Error (12152): Can't elaborate user hierarchy "ALU:alu" File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 23
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 3 warnings
-    Error: Peak virtual memory: 360 megabytes
-    Error: Processing ended: Fri May 29 16:27:39 2026
-    Error: Elapsed time: 00:00:04
-    Error: Total CPU time (on all processors): 00:00:13
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: /home/jeremy/ECE204/new/8-bit-ALU/Output.sv Line: 23
+Info (12128): Elaborating entity "Register" for hierarchy "ALU:alu|Register:statereg" File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 49
+Info (12128): Elaborating entity "Register" for hierarchy "ALU:alu|Register:opcodereg" File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 56
+Info (12128): Elaborating entity "OpDecoder" for hierarchy "ALU:alu|OpDecoder:decoder" File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 82
+Info (12128): Elaborating entity "Add" for hierarchy "ALU:alu|Add:adder" File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 90
+Info (12128): Elaborating entity "AndInstruct" for hierarchy "ALU:alu|AndInstruct:andInstruct" File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 104
+Info (12128): Elaborating entity "OrInstruct" for hierarchy "ALU:alu|OrInstruct:orInstruct" File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 110
+Info (12128): Elaborating entity "XorInstruct" for hierarchy "ALU:alu|XorInstruct:xorInstruct" File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 116
+Info (12128): Elaborating entity "Multiply" for hierarchy "ALU:alu|Multiply:comb_3" File: /home/jeremy/ECE204/new/8-bit-ALU/ALU.sv Line: 123
+Info (12128): Elaborating entity "SevenSegmentDecode" for hierarchy "SevenSegmentDecode:decode_high" File: /home/jeremy/ECE204/new/8-bit-ALU/Output.sv Line: 28
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 223 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 196 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 484 megabytes
+    Info: Processing ended: Fri Jun  5 14:49:46 2026
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:14
 
 

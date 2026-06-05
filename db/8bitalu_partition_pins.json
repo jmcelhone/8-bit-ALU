@@ -1,0 +1,117 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "seg_high[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_high[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_high[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_high[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_high[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_high[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_high[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_low[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_low[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_low[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_low[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_low[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_low[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_low[6]",
+					"strict" : false
+				},
+				{
+					"name" : "overflow_led",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "nextStateButton",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
