@@ -8,9 +8,9 @@ output logic carry
 
 logic [7:0] c;
 
-initial begin
-c = 8'h00;
-end
+//initial begin
+//c = 8'h00;
+//end
 
 always_comb begin
 sum[0] = a[0]^b[0];
