@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE 10M50DAF484C7G
 set_global_assignment -name TOP_LEVEL_ENTITY Output
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:56:32  MAY 29, 2026"
-set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "25.1std.0 Lite Edition"
 set_global_assignment -name SYSTEMVERILOG_FILE Output.sv
 set_global_assignment -name SYSTEMVERILOG_FILE XOR.sv
 set_global_assignment -name SYSTEMVERILOG_FILE AND.sv
@@ -60,4 +60,73 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_P11 -to clock
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clock
+set_location_assignment PIN_B8 -to nextStateButton
+set_location_assignment PIN_A7 -to reset
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to nextStateButton
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in[6]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to reset
+set_location_assignment PIN_C10 -to in[0]
+set_location_assignment PIN_C11 -to in[1]
+set_location_assignment PIN_D12 -to in[2]
+set_location_assignment PIN_C12 -to in[3]
+set_location_assignment PIN_A12 -to in[4]
+set_location_assignment PIN_B12 -to in[5]
+set_location_assignment PIN_A13 -to in[6]
+set_location_assignment PIN_A14 -to in[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to in[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in[0]
+set_location_assignment PIN_C14 -to seg_low[0]
+set_location_assignment PIN_E15 -to seg_low[1]
+set_location_assignment PIN_C15 -to seg_low[2]
+set_location_assignment PIN_C16 -to seg_low[3]
+set_location_assignment PIN_E16 -to seg_low[4]
+set_location_assignment PIN_D17 -to seg_low[5]
+set_location_assignment PIN_C17 -to seg_low[6]
+set_location_assignment PIN_D15 -to overflow_led
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to overflow_led
+set_location_assignment PIN_C18 -to seg_high[0]
+set_location_assignment PIN_D18 -to seg_high[1]
+set_location_assignment PIN_E18 -to seg_high[2]
+set_location_assignment PIN_B16 -to seg_high[3]
+set_location_assignment PIN_A17 -to seg_high[4]
+set_location_assignment PIN_A18 -to seg_high[5]
+set_location_assignment PIN_B17 -to seg_high[6]
+set_location_assignment PIN_B20 -to seg_state[0]
+set_location_assignment PIN_A20 -to seg_state[1]
+set_location_assignment PIN_B19 -to seg_state[2]
+set_location_assignment PIN_A21 -to seg_state[3]
+set_location_assignment PIN_B21 -to seg_state[4]
+set_location_assignment PIN_C22 -to seg_state[5]
+set_location_assignment PIN_B22 -to seg_state[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_state[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_state[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_state[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_state[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_state[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_state[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_low[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_low[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_high[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_state[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_state
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_low[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_low[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_high[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_high[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_high[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_high[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_high[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_high[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_high
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_low[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_low[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_low[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg_low
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,6 +1,6 @@
 |Output
-clock => clock.IN1
-reset => reset.IN1
+clock => clock.IN2
+reset => reset.IN2
 in[0] => in[0].IN1
 in[1] => in[1].IN1
 in[2] => in[2].IN1
@@ -10,15 +10,6 @@ in[5] => in[5].IN1
 in[6] => in[6].IN1
 in[7] => in[7].IN1
 nextStateButton => nextStateButton.IN1
-enable => comb.OUTPUTSELECT
-enable => comb.OUTPUTSELECT
-enable => comb.OUTPUTSELECT
-enable => comb.OUTPUTSELECT
-enable => comb.OUTPUTSELECT
-enable => comb.OUTPUTSELECT
-enable => comb.OUTPUTSELECT
-enable => comb.OUTPUTSELECT
-enable => overflow_led.OUTPUTSELECT
 seg_high[0] << SevenSegmentDecode:decode_high.segments
 seg_high[1] << SevenSegmentDecode:decode_high.segments
 seg_high[2] << SevenSegmentDecode:decode_high.segments
@@ -33,7 +24,67 @@ seg_low[3] << SevenSegmentDecode:decode_low.segments
 seg_low[4] << SevenSegmentDecode:decode_low.segments
 seg_low[5] << SevenSegmentDecode:decode_low.segments
 seg_low[6] << SevenSegmentDecode:decode_low.segments
-overflow_led << overflow_led.DB_MAX_OUTPUT_PORT_TYPE
+seg_state[0] << SevenSegmentDecode:decode_state.segments
+seg_state[1] << SevenSegmentDecode:decode_state.segments
+seg_state[2] << SevenSegmentDecode:decode_state.segments
+seg_state[3] << SevenSegmentDecode:decode_state.segments
+seg_state[4] << SevenSegmentDecode:decode_state.segments
+seg_state[5] << SevenSegmentDecode:decode_state.segments
+seg_state[6] << SevenSegmentDecode:decode_state.segments
+overflow_led << ALU:alu.carryOut
+
+
+|Output|ButtonPulse:button_inst
+clock => last_state.CLK
+clock => debounced_state.CLK
+clock => counter[0].CLK
+clock => counter[1].CLK
+clock => counter[2].CLK
+clock => counter[3].CLK
+clock => counter[4].CLK
+clock => counter[5].CLK
+clock => counter[6].CLK
+clock => counter[7].CLK
+clock => counter[8].CLK
+clock => counter[9].CLK
+clock => counter[10].CLK
+clock => counter[11].CLK
+clock => counter[12].CLK
+clock => counter[13].CLK
+clock => counter[14].CLK
+clock => counter[15].CLK
+clock => counter[16].CLK
+clock => counter[17].CLK
+clock => counter[18].CLK
+clock => counter[19].CLK
+clock => sync_1.CLK
+clock => sync_0.CLK
+reset => debounced_state.PRESET
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+reset => counter[7].ACLR
+reset => counter[8].ACLR
+reset => counter[9].ACLR
+reset => counter[10].ACLR
+reset => counter[11].ACLR
+reset => counter[12].ACLR
+reset => counter[13].ACLR
+reset => counter[14].ACLR
+reset => counter[15].ACLR
+reset => counter[16].ACLR
+reset => counter[17].ACLR
+reset => counter[18].ACLR
+reset => counter[19].ACLR
+reset => sync_1.PRESET
+reset => sync_0.PRESET
+reset => last_state.PRESET
+button_in => sync_0.DATAIN
+pulse_out <= pulse_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Output|ALU:alu
@@ -76,6 +127,10 @@ aluOut[5] <= aluOut[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 aluOut[6] <= aluOut[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 aluOut[7] <= aluOut[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 carryOut <= carryOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+currentState[0] <= currentState[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+currentState[1] <= currentState[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+currentState[2] <= currentState[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+currentState[3] <= currentState[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Output|ALU:alu|Register:statereg
@@ -411,7 +466,7 @@ out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Output|ALU:alu|Multiply:comb_3
+|Output|ALU:alu|Multiply:multInstruct
 clock => multOut[0]~reg0.CLK
 clock => multOut[1]~reg0.CLK
 clock => multOut[2]~reg0.CLK
@@ -596,6 +651,20 @@ segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Output|SevenSegmentDecode:decode_low
+digit[0] => Decoder0.IN3
+digit[1] => Decoder0.IN2
+digit[2] => Decoder0.IN1
+digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Output|SevenSegmentDecode:decode_state
 digit[0] => Decoder0.IN3
 digit[1] => Decoder0.IN2
 digit[2] => Decoder0.IN1

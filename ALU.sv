@@ -116,7 +116,7 @@ XorInstruct xorInstruct(
     .out(xorOut)
     );
 
-Multiply(
+Multiply multInstruct(
     .clock(clock),
     .a(a),
     .b(b),
@@ -125,11 +125,9 @@ Multiply(
 
 
     always_comb begin
-    nextState[0] = (~state[0] & state[1] & ~nextStateButton) | (state[0] & state[1] & nextStateButton);
+    nextState[0] = (~state[0] & state[1] & nextStateButton) | (state[0] & state[1] & ~nextStateButton);
 
-    nextState[1] = (state[0] | state[1] | ~nextStateButton) & (~state[0] | ~state[1] | nextStateButton);
-    nextState[0] = nextState[0] & reset;
-    nextState[1] = nextState[1] & reset;
+    nextState[1] = (state[0] | state[1] | nextStateButton) & (~state[0] | ~state[1] | ~nextStateButton);
 end
 
 always_ff @(posedge clock or negedge reset) begin
@@ -147,11 +145,11 @@ always_ff @(posedge clock or negedge reset) begin
         end
         if(~state[0] & state[1]) begin
             a <= in;
-            currentState <= 1'h1;
+            currentState <= 4'h1;
         end
         if(state[0] & state[1]) begin
             b <= in;
-            currentState <= 1'h2;
+            currentState <= 4'h2;
         end
         if(op_add) begin
             aluOut <= adderOut;

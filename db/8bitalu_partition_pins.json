@@ -60,11 +60,31 @@
 					"strict" : false
 				},
 				{
-					"name" : "overflow_led",
+					"name" : "seg_state[0]",
 					"strict" : false
 				},
 				{
-					"name" : "enable",
+					"name" : "seg_state[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_state[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_state[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_state[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_state[6]",
+					"strict" : false
+				},
+				{
+					"name" : "overflow_led",
 					"strict" : false
 				},
 				{

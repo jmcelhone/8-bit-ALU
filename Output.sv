@@ -11,14 +11,21 @@ module Output (
 
     logic [7:0]  result;
     logic        overflow;
-    logic [1:0]  currentState;
+    logic [3:0]  currentState;
+
+ButtonPulse button_inst (
+        .clock(clock),
+        .reset(reset),
+        .button_in(nextStateButton),
+        .pulse_out(clean_pulse)
+);
 
 
 ALU alu(
     .clock          (clock),
     .reset          (reset),
     .in             (in),
-    .nextStateButton(nextStateButton),
+    .nextStateButton(clean_pulse),
     .aluOut         (result),
     .carryOut       (overflow),
     .currentState   (currentState)
@@ -34,8 +41,8 @@ ALU alu(
         .segments (seg_low)
     );
 
-    SevenSegmentDecode decode_high (
-        .digit    (seg_state),
+    SevenSegmentDecode decode_state (
+        .digit    (currentState),
         .segments (seg_state)
     );
 
