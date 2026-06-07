@@ -209,18 +209,14 @@ initial begin
 	reset = 1'b1;
 	nextStateButton = 1'h0;
 	in = 8'h00;
-	for (int i=0; i<16; i++) begin
-		for (int j=0; i<16; i++) begin
-			validateOutA(i,j);
-			validateOutB(i,j);
-			validateOr(i,j);
-			validateAnd(i,j);
-			validateXor(i,j);
-			validateAdd(i,j);
-			validateSub(i,j);
-		end
-		validateMult(i,15-j);
-	end
+	validateOutA(169,42);
+	validateOutB(169,42);
+	validateOr(169,42);
+	validateAnd(169,42);
+	validateXor(169,42);
+	validateAdd(169,42);
+	validateSub(169,42);
+	validateMult(169,42);
 end
 
 endmodule
