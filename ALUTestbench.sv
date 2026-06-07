@@ -21,7 +21,7 @@ task validateReset();
 	reset = 1'b0;
 	#10;
 	reset = 1'b1;
-
+	#10;
 	if (aluOut!==8'h00) begin
 		$display("%0t ps: Reset failed",$time);
 	end
@@ -217,6 +217,7 @@ initial begin
 	validateAdd(169,42);
 	validateSub(169,42);
 	validateMult(169,42);
+	validateReset();
 end
 
 endmodule
