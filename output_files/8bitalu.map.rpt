@@ -1,6 +1,6 @@
 Analysis & Synthesis report for 8bitalu
-Sat Jun  6 09:57:37 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Sat Jun  6 13:12:57 2026
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
 ---------------------
@@ -37,43 +37,43 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun  6 09:57:37 2026           ;
-; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                      ; 8bitalu                                         ;
-; Top-level Entity Name              ; Output                                          ;
-; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 211                                             ;
-;     Total combinational functions  ; 190                                             ;
-;     Dedicated logic registers      ; 65                                              ;
-; Total registers                    ; 65                                              ;
-; Total pins                         ; 33                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-; UFM blocks                         ; 0                                               ;
-; ADC blocks                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Jun  6 13:12:57 2026          ;
+; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Revision Name                      ; 8bitalu                                        ;
+; Top-level Entity Name              ; Output                                         ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 211                                            ;
+;     Total combinational functions  ; 190                                            ;
+;     Dedicated logic registers      ; 65                                             ;
+; Total registers                    ; 65                                             ;
+; Total pins                         ; 33                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -167,36 +167,35 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-12        ;   0.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
-; Output.sv                        ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/Output.sv             ;         ;
-; XOR.sv                           ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/XOR.sv                ;         ;
-; AND.sv                           ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/AND.sv                ;         ;
-; Add.sv                           ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/Add.sv                ;         ;
-; ALU.sv                           ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/ALU.sv                ;         ;
-; OpDecoder.sv                     ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/OpDecoder.sv          ;         ;
-; SevenSegmentDecode.sv            ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/SevenSegmentDecode.sv ;         ;
-; Multiply.sv                      ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/Multiply.sv           ;         ;
-; OR.sv                            ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/OR.sv                 ;         ;
-; Register.sv                      ; yes             ; User SystemVerilog HDL File        ; /home/Jacob/Documents/8-bit-ALU/Register.sv           ;         ;
-; ButtonPulse.sv                   ; yes             ; Auto-Found SystemVerilog HDL File  ; /home/Jacob/Documents/8-bit-ALU/ButtonPulse.sv        ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                        ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------+---------+
+; Output.sv                        ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/Output.sv             ;         ;
+; XOR.sv                           ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/XOR.sv                ;         ;
+; AND.sv                           ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/AND.sv                ;         ;
+; Add.sv                           ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/Add.sv                ;         ;
+; ALU.sv                           ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/ALU.sv                ;         ;
+; OpDecoder.sv                     ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/OpDecoder.sv          ;         ;
+; SevenSegmentDecode.sv            ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/SevenSegmentDecode.sv ;         ;
+; Multiply.sv                      ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/Multiply.sv           ;         ;
+; OR.sv                            ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/OR.sv                 ;         ;
+; Register.sv                      ; yes             ; User SystemVerilog HDL File        ; /home/jeremy/ECE204/8-bit-ALU/Register.sv           ;         ;
+; ButtonPulse.sv                   ; yes             ; Auto-Found SystemVerilog HDL File  ; /home/jeremy/ECE204/8-bit-ALU/ButtonPulse.sv        ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -449,50 +448,50 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sat Jun  6 09:57:32 2026
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+    Info: Processing started: Sat Jun  6 13:12:52 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8bitalu -c 8bitalu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file Output.sv
-    Info (12023): Found entity 1: Output File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 1
+    Info (12023): Found entity 1: Output File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file XOR.sv
-    Info (12023): Found entity 1: XorInstruct File: /home/Jacob/Documents/8-bit-ALU/XOR.sv Line: 1
+    Info (12023): Found entity 1: XorInstruct File: /home/jeremy/ECE204/8-bit-ALU/XOR.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file AND.sv
-    Info (12023): Found entity 1: AndInstruct File: /home/Jacob/Documents/8-bit-ALU/AND.sv Line: 1
+    Info (12023): Found entity 1: AndInstruct File: /home/jeremy/ECE204/8-bit-ALU/AND.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Add.sv
-    Info (12023): Found entity 1: Add File: /home/Jacob/Documents/8-bit-ALU/Add.sv Line: 1
+    Info (12023): Found entity 1: Add File: /home/jeremy/ECE204/8-bit-ALU/Add.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ALU.sv
-    Info (12023): Found entity 1: ALU File: /home/Jacob/Documents/8-bit-ALU/ALU.sv Line: 1
+    Info (12023): Found entity 1: ALU File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file OpDecoder.sv
-    Info (12023): Found entity 1: OpDecoder File: /home/Jacob/Documents/8-bit-ALU/OpDecoder.sv Line: 1
+    Info (12023): Found entity 1: OpDecoder File: /home/jeremy/ECE204/8-bit-ALU/OpDecoder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file SevenSegmentDecode.sv
-    Info (12023): Found entity 1: SevenSegmentDecode File: /home/Jacob/Documents/8-bit-ALU/SevenSegmentDecode.sv Line: 27
+    Info (12023): Found entity 1: SevenSegmentDecode File: /home/jeremy/ECE204/8-bit-ALU/SevenSegmentDecode.sv Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file Multiply.sv
-    Info (12023): Found entity 1: Multiply File: /home/Jacob/Documents/8-bit-ALU/Multiply.sv Line: 1
+    Info (12023): Found entity 1: Multiply File: /home/jeremy/ECE204/8-bit-ALU/Multiply.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file OR.sv
-    Info (12023): Found entity 1: OrInstruct File: /home/Jacob/Documents/8-bit-ALU/OR.sv Line: 1
+    Info (12023): Found entity 1: OrInstruct File: /home/jeremy/ECE204/8-bit-ALU/OR.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Register.sv
-    Info (12023): Found entity 1: Register File: /home/Jacob/Documents/8-bit-ALU/Register.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at Output.sv(20): created implicit net for "clean_pulse" File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 20
+    Info (12023): Found entity 1: Register File: /home/jeremy/ECE204/8-bit-ALU/Register.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Output.sv(20): created implicit net for "clean_pulse" File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 20
 Info (12127): Elaborating entity "Output" for the top level hierarchy
 Warning (12125): Using design file ButtonPulse.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: ButtonPulse File: /home/Jacob/Documents/8-bit-ALU/ButtonPulse.sv Line: 1
-Info (12128): Elaborating entity "ButtonPulse" for hierarchy "ButtonPulse:button_inst" File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 21
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 32
-Info (12128): Elaborating entity "Register" for hierarchy "ALU:alu|Register:statereg" File: /home/Jacob/Documents/8-bit-ALU/ALU.sv Line: 50
-Info (12128): Elaborating entity "Register" for hierarchy "ALU:alu|Register:opcodereg" File: /home/Jacob/Documents/8-bit-ALU/ALU.sv Line: 57
-Info (12128): Elaborating entity "OpDecoder" for hierarchy "ALU:alu|OpDecoder:decoder" File: /home/Jacob/Documents/8-bit-ALU/ALU.sv Line: 83
-Info (12128): Elaborating entity "Add" for hierarchy "ALU:alu|Add:adder" File: /home/Jacob/Documents/8-bit-ALU/ALU.sv Line: 91
-Info (12128): Elaborating entity "AndInstruct" for hierarchy "ALU:alu|AndInstruct:andInstruct" File: /home/Jacob/Documents/8-bit-ALU/ALU.sv Line: 105
-Info (12128): Elaborating entity "OrInstruct" for hierarchy "ALU:alu|OrInstruct:orInstruct" File: /home/Jacob/Documents/8-bit-ALU/ALU.sv Line: 111
-Info (12128): Elaborating entity "XorInstruct" for hierarchy "ALU:alu|XorInstruct:xorInstruct" File: /home/Jacob/Documents/8-bit-ALU/ALU.sv Line: 117
-Info (12128): Elaborating entity "Multiply" for hierarchy "ALU:alu|Multiply:multInstruct" File: /home/Jacob/Documents/8-bit-ALU/ALU.sv Line: 124
-Info (12128): Elaborating entity "SevenSegmentDecode" for hierarchy "SevenSegmentDecode:decode_high" File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 37
-Info (13000): Registers with preset signals will power-up high File: /home/Jacob/Documents/8-bit-ALU/ButtonPulse.sv Line: 49
+    Info (12023): Found entity 1: ButtonPulse File: /home/jeremy/ECE204/8-bit-ALU/ButtonPulse.sv Line: 1
+Info (12128): Elaborating entity "ButtonPulse" for hierarchy "ButtonPulse:button_inst" File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 21
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 32
+Info (12128): Elaborating entity "Register" for hierarchy "ALU:alu|Register:statereg" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 50
+Info (12128): Elaborating entity "Register" for hierarchy "ALU:alu|Register:opcodereg" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 57
+Info (12128): Elaborating entity "OpDecoder" for hierarchy "ALU:alu|OpDecoder:decoder" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 83
+Info (12128): Elaborating entity "Add" for hierarchy "ALU:alu|Add:adder" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 91
+Info (12128): Elaborating entity "AndInstruct" for hierarchy "ALU:alu|AndInstruct:andInstruct" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 105
+Info (12128): Elaborating entity "OrInstruct" for hierarchy "ALU:alu|OrInstruct:orInstruct" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 111
+Info (12128): Elaborating entity "XorInstruct" for hierarchy "ALU:alu|XorInstruct:xorInstruct" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 117
+Info (12128): Elaborating entity "Multiply" for hierarchy "ALU:alu|Multiply:multInstruct" File: /home/jeremy/ECE204/8-bit-ALU/ALU.sv Line: 124
+Info (12128): Elaborating entity "SevenSegmentDecode" for hierarchy "SevenSegmentDecode:decode_high" File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 37
+Info (13000): Registers with preset signals will power-up high File: /home/jeremy/ECE204/8-bit-ALU/ButtonPulse.sv Line: 49
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "seg_state[1]" is stuck at GND File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 8
+    Warning (13410): Pin "seg_state[1]" is stuck at GND File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 8
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -501,9 +500,9 @@ Info (21057): Implemented 250 device resources after synthesis - the final resou
     Info (21059): Implemented 22 output pins
     Info (21061): Implemented 217 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 485 megabytes
-    Info: Processing ended: Sat Jun  6 09:57:37 2026
+    Info: Peak virtual memory: 494 megabytes
+    Info: Processing ended: Sat Jun  6 13:12:57 2026
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Total CPU time (on all processors): 00:00:14
 
 

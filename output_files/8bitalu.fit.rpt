@@ -1,6 +1,6 @@
 Fitter report for 8bitalu
-Sat Jun  6 09:57:42 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Sat Jun  6 13:13:03 2026
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
 ---------------------
@@ -49,45 +49,45 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Fitter Summary                                                                       ;
-+------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sat Jun  6 09:57:42 2026           ;
-; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                      ; 8bitalu                                         ;
-; Top-level Entity Name              ; Output                                          ;
-; Family                             ; MAX 10                                          ;
-; Device                             ; 10M50DAF484C7G                                  ;
-; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 196 / 49,760 ( < 1 % )                          ;
-;     Total combinational functions  ; 191 / 49,760 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 65 / 49,760 ( < 1 % )                           ;
-; Total registers                    ; 65                                              ;
-; Total pins                         ; 33 / 360 ( 9 % )                                ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                           ;
-; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                 ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
-; UFM blocks                         ; 0 / 1 ( 0 % )                                   ;
-; ADC blocks                         ; 0 / 2 ( 0 % )                                   ;
-+------------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Fitter Summary                                                                      ;
++------------------------------------+------------------------------------------------+
+; Fitter Status                      ; Successful - Sat Jun  6 13:13:03 2026          ;
+; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Revision Name                      ; 8bitalu                                        ;
+; Top-level Entity Name              ; Output                                         ;
+; Family                             ; MAX 10                                         ;
+; Device                             ; 10M50DAF484C7G                                 ;
+; Timing Models                      ; Final                                          ;
+; Total logic elements               ; 196 / 49,760 ( < 1 % )                         ;
+;     Total combinational functions  ; 191 / 49,760 ( < 1 % )                         ;
+;     Dedicated logic registers      ; 65 / 49,760 ( < 1 % )                          ;
+; Total registers                    ; 65                                             ;
+; Total pins                         ; 33 / 360 ( 9 % )                               ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                                  ;
+; ADC blocks                         ; 0 / 2 ( 0 % )                                  ;
++------------------------------------+------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,16 +152,15 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.18        ;
-; Maximum used               ; 12          ;
+; Average used               ; 1.14        ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.7%      ;
-;     Processors 3-12        ;   1.6%      ;
+;     Processors 2-16        ;   1.0%      ;
 +----------------------------+-------------+
 
 
@@ -214,7 +213,7 @@ on the Quartus Prime software download page.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/Jacob/Documents/8-bit-ALU/output_files/8bitalu.pin.
+The pin-out file can be found in /home/jeremy/ECE204/8-bit-ALU/output_files/8bitalu.pin.
 
 
 +----------------------------------------------------------------------+
@@ -1441,7 +1440,7 @@ Note: This table only shows the top 1 path(s) that have the largest delay added 
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
 Info (119006): Selected device 10M50DAF484C7G for design "8bitalu"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1480,12 +1479,12 @@ Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node clock~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 2
+Info (176353): Automatically promoted node clock~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 2
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G19
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1498,7 +1497,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.09 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.11 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1506,28 +1505,28 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 11 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing MAX 10 Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin clock uses I/O standard 3.3-V LVTTL at P11 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 2
-    Info (169178): Pin reset uses I/O standard 3.3 V Schmitt Trigger at A7 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 3
-    Info (169178): Pin in[4] uses I/O standard 3.3-V LVCMOS at A12 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 4
-    Info (169178): Pin in[1] uses I/O standard 3.3-V LVTTL at C11 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 4
-    Info (169178): Pin in[0] uses I/O standard 3.3-V LVTTL at C10 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 4
-    Info (169178): Pin in[3] uses I/O standard 3.3-V LVTTL at C12 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 4
-    Info (169178): Pin in[2] uses I/O standard 3.3-V LVTTL at D12 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 4
-    Info (169178): Pin in[5] uses I/O standard 3.3-V LVTTL at B12 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 4
-    Info (169178): Pin in[6] uses I/O standard 3.3-V LVTTL at A13 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 4
-    Info (169178): Pin in[7] uses I/O standard 3.3-V LVTTL at A14 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 4
-    Info (169178): Pin nextStateButton uses I/O standard 3.3 V Schmitt Trigger at B8 File: /home/Jacob/Documents/8-bit-ALU/Output.sv Line: 5
-Info (144001): Generated suppressed messages file /home/Jacob/Documents/8-bit-ALU/output_files/8bitalu.fit.smsg
+    Info (169178): Pin clock uses I/O standard 3.3-V LVTTL at P11 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 2
+    Info (169178): Pin reset uses I/O standard 3.3 V Schmitt Trigger at A7 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 3
+    Info (169178): Pin in[4] uses I/O standard 3.3-V LVCMOS at A12 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 4
+    Info (169178): Pin in[1] uses I/O standard 3.3-V LVTTL at C11 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 4
+    Info (169178): Pin in[0] uses I/O standard 3.3-V LVTTL at C10 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 4
+    Info (169178): Pin in[3] uses I/O standard 3.3-V LVTTL at C12 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 4
+    Info (169178): Pin in[2] uses I/O standard 3.3-V LVTTL at D12 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 4
+    Info (169178): Pin in[5] uses I/O standard 3.3-V LVTTL at B12 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 4
+    Info (169178): Pin in[6] uses I/O standard 3.3-V LVTTL at A13 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 4
+    Info (169178): Pin in[7] uses I/O standard 3.3-V LVTTL at A14 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 4
+    Info (169178): Pin nextStateButton uses I/O standard 3.3 V Schmitt Trigger at B8 File: /home/jeremy/ECE204/8-bit-ALU/Output.sv Line: 5
+Info (144001): Generated suppressed messages file /home/jeremy/ECE204/8-bit-ALU/output_files/8bitalu.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1674 megabytes
-    Info: Processing ended: Sat Jun  6 09:57:42 2026
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Peak virtual memory: 2072 megabytes
+    Info: Processing ended: Sat Jun  6 13:13:03 2026
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:11
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/Jacob/Documents/8-bit-ALU/output_files/8bitalu.fit.smsg.
+The suppressed messages can be found in /home/jeremy/ECE204/8-bit-ALU/output_files/8bitalu.fit.smsg.
 
 
